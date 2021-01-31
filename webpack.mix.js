@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,4 +14,14 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    // .copy('resources/assets/css/iconfont.css', 'public/css/iconfont.css')
+    .webpackConfig({
+        resolve: {
+            alias: {
+                '@': path.resolve(__dirname, 'resources/js/src'),
+                'assets': path.resolve(__dirname, 'resources/assets'),
+                '@sass': path.resolve(__dirname, 'resources/sass')
+            }
+        }
+    });
