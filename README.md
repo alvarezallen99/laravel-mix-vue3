@@ -13,8 +13,10 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 ## Command Used
 
+```
 laravel new App
 composer require laravel/ui
 php artisan ui vue
 npm install vue@next laravel-mix@next vue-router@next
 npm install 
+```
